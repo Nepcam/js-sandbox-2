@@ -1,4 +1,4 @@
-// Define UI Vars
+// Define UI Variables
 const form = document.querySelector('#task-form');
 const taskList = document.querySelector('.collection');
 const clearBtn = document.querySelector('.clear-tasks');
@@ -47,7 +47,7 @@ function addTask(e) {
     // Clear input
     taskInput.value = '';
 
-    e.preventDefault();
+    e.preventDefault(); // prevents an event default from happening automatically 
 }
 
 // Remove Task
