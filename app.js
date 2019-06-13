@@ -5,11 +5,11 @@ const clearBtn = document.querySelector('.clear-tasks');
 const filter = document.querySelector('#filter');
 const taskInput = document.querySelector('#task');
 
-// Load all event listeners
+// Load all event listeners 
 loadEventListeners();
 
 // Load all event listeners
-function loadEventListeners() {
+function loadEventListeners() { // load event function with functions inside
     // DOM load event
     document.addEventListener('DOMContentLoaded', getTasks);
     // Add task event
@@ -22,7 +22,7 @@ function loadEventListeners() {
     filter.addEventListener('keyup', filterTasks);
 }
 
-// Get Tasks from LS
+// Get Tasks from local storage
 function getTasks(){
     let tasks;
     if(localStorage.getItem('tasks') === null){
@@ -31,8 +31,8 @@ function getTasks(){
         tasks = JSON.parse(localStorage.getItem('tasks'))
     }
 
-    tasks.forEach(function(task){
-        // Create li element
+    tasks.forEach(function(task){  
+        // Create li element  
         const li = document.createElement('li');
         // Add a class
         li.className = 'collection-item';
@@ -52,13 +52,13 @@ function getTasks(){
     })
 }
 
-// Add Task
+// Add Task - 
 function addTask(e) {
     if(taskInput.value === '') {
         alert('Add a task');
     }
 
-    // Create li element
+    // Create li element - // this creates an element so that the (add task) can sit inside it
     const li = document.createElement('li');
     // Add a class
     li.className = 'collection-item';
@@ -133,7 +133,7 @@ function removeTaskFromLocalStorage(taskItem) {
 function clearTasks() {
     // taskList.innerHTML = '; // One way to clear the whole task list
 
-    // Faster clear task method
+    // Faster recommended clear task method 
     while(taskList.firstChild) {
         taskList.removeChild(taskList.firstChild);
     }
